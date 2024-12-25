@@ -98,7 +98,32 @@ def save_password():
         save_info.insert(0, "Invalid input, try again.")
 
 def searchPassword():
-    pass
+    Button_1.config(state='disabled')
+    Button_3.config(text="Re Save Password")
+    passwordName = EntryBox_1.get()
+    cursor.execute('SELECT * FROM passwords WHERE name = ?',(passwordName, ))
+    result = cursor.fetchone()
+    if result is None:
+        Button_1.config(state='disabled')
+        Button_2.config(state='disabled')
+        Button_3.config(state='disabled')
+        result_entry.delete(0, END)
+        result_entry.insert(0, "Not Found !")
+    else:
+        searchedPassword = result[3]
+        searchedLength = result[2]
+        result_entry.delete(0, END)
+        EntryBox_2.delete(0, END)
+        EntryBox_2.insert(0, searchedLength)
+        result_entry.insert(0, searchedPassword)
+
+def Reset():
+    EntryBox_1.delete(0, END)
+    EntryBox_2.delete(0, END)
+    result_entry.delete(0, END)
+    Button_1.config(state="normal")
+    Button_2.config(state="normal")
+    Button_3.config(state="normal", text="Save Passoword")
 
 # Handle closing event
 def on_closing():
@@ -123,7 +148,10 @@ LabelFrame = ttk.LabelFrame(app, text="How many characters do you want : ")
 LabelFrame.pack(pady=10)
 
 EntryBox_2 = tkinter.Entry(LabelFrame, font=("Helvetica", 18))
-EntryBox_2.pack(pady=10, padx=10)
+EntryBox_2.grid(row=0, column=0, pady=10, padx=10)
+
+ResetButton = tkinter.Button(LabelFrame, text="Reset", font=("Helvetica", 10), command=Reset)
+ResetButton.grid(row=0, column=1, pady=10, padx=10)
 
 result_frame = ttk.LabelFrame(app, text="The Password :")
 result_frame.pack(pady=10, padx=10)
