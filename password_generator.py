@@ -97,6 +97,9 @@ def save_password():
         save_info.delete(0, END)
         save_info.insert(0, "Invalid input, try again.")
 
+def searchPassword():
+    pass
+
 # Handle closing event
 def on_closing():
     conn.close()
@@ -111,7 +114,10 @@ LabelFrame = ttk.LabelFrame(app, text="Name the Password : ")
 LabelFrame.pack(pady=10)
 
 EntryBox_1 = tkinter.Entry(LabelFrame, font=("Helvetica", 18))
-EntryBox_1.pack(pady=10, padx=10)
+EntryBox_1.grid(row=0, column=0, pady=10, padx=10)
+
+SearchButton = tkinter.Button(LabelFrame, text="Search", font=("Helvetica", 10), command=searchPassword)
+SearchButton.grid(row=0, column=1, pady=10, padx=10)
 
 LabelFrame = ttk.LabelFrame(app, text="How many characters do you want : ")
 LabelFrame.pack(pady=10)
