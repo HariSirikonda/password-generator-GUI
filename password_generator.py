@@ -162,6 +162,9 @@ result_entry.grid(row=0, column=0, padx=10, pady=10)
 strength_label = tkinter.Label(result_frame, text="Strength")
 strength_label.grid(row=0, column=1, padx=10, pady=10)
 
+DeleteButton = tkinter.Button(result_frame, text="Delete", font=("Helvetica", 10))
+DeleteButton.grid(row=0, column=2, padx=10, pady=10)
+
 Buttonframe = ttk.LabelFrame(app, text="Functions")
 Buttonframe.pack(pady=10)
 
