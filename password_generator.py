@@ -112,6 +112,13 @@ def searchPassword():
     else:
         searchedPassword = result[3]
         searchedLength = result[2]
+        strength_score = check_password_strength(searchedPassword)
+        if strength_score <= 2:
+            strength_label.config(text="Weak", fg="red")
+        elif strength_score <= 4:
+            strength_label.config(text="Moderate", fg="orange")
+        else:
+            strength_label.config(text="Strong", fg="green")
         result_entry.delete(0, END)
         EntryBox_2.delete(0, END)
         EntryBox_2.insert(0, searchedLength)
