@@ -99,9 +99,10 @@ def save_password():
 
 def searchPassword():
     Button_1.config(state='disabled')
+    DeleteButton.config(state="normal")
     Button_3.config(text="Re Save Password")
     passwordName = EntryBox_1.get()
-    cursor.execute('SELECT * FROM passwords WHERE name = ?',(passwordName, ))
+    cursor.execute('SELECT * FROM passwords WHERE name = ?', (passwordName,))
     result = cursor.fetchone()
     if result is None:
         Button_1.config(state='disabled')
@@ -181,7 +182,7 @@ result_entry.grid(row=0, column=0, padx=10, pady=10)
 strength_label = tkinter.Label(result_frame, text="Strength")
 strength_label.grid(row=0, column=1, padx=10, pady=10)
 
-DeleteButton = tkinter.Button(result_frame, text="Delete", font=("Helvetica", 10), command=delete_password)
+DeleteButton = tkinter.Button(result_frame, text="Delete", font=("Helvetica", 10), command=delete_password, state="disabled")
 DeleteButton.grid(row=0, column=2, padx=10, pady=10)
 
 Buttonframe = ttk.LabelFrame(app, text="Functions")
