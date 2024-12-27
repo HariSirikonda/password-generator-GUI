@@ -133,6 +133,9 @@ def Reset():
     Button_2.config(state="normal")
     Button_3.config(state="normal", text="Save Passoword")
 
+def updatePassword():
+    pass
+
 def delete_password():
     PasswordName = EntryBox_1.get()
     cursor.execute("DELETE FROM passwords WHERE name = ?", (PasswordName,))
@@ -182,7 +185,7 @@ result_entry.grid(row=0, column=0, padx=10, pady=10)
 strength_label = tkinter.Label(result_frame, text="Strength")
 strength_label.grid(row=0, column=1, padx=10, pady=10)
 
-updateButton = tkinter.Button(result_frame, text="Update", font=("Helvetica", 10))
+updateButton = tkinter.Button(result_frame, text="Update", font=("Helvetica", 10), command=updatePassword)
 updateButton.grid(row=0, column=2, padx=10, pady=10)
 
 DeleteButton = tkinter.Button(result_frame, text="Delete", font=("Helvetica", 10), command=delete_password, state="disabled")
