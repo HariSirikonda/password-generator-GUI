@@ -141,8 +141,8 @@ def updatePassword():
     result = cursor.fetchone()
 
     if result:
-        cursor.execute("UPDATE passwords SET char_length = ?, password = ?, strength = ?, date = ? WHERE name",
-                       (len(newPassword), newPassword, check_password_strength(newPassword), formatted_date), passwordname)
+        cursor.execute("UPDATE passwords SET char_length = ?, password = ?, strength = ?, date = ? WHERE name = ?",
+                       (len(newPassword), newPassword, check_password_strength(newPassword), formatted_date, passwordname))
         conn.commit()
     save_info.delete(0, END)
     save_info.insert(0, "Password Updated :)")
