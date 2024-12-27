@@ -134,7 +134,19 @@ def Reset():
     Button_3.config(state="normal", text="Save Passoword")
 
 def updatePassword():
-    pass
+    passwordname = EntryBox_1.get()
+    newPassword = result_entry.get()
+
+    cursor.execute("SELECT * FROM passwords WHERE name = ?", (passwordname,))
+    result = cursor.fetchone()
+
+    if result:
+        cursor.execute("UPDATE passwords SET char_length = ?, password = ?, strength = ?, date = ? WHERE name",
+                       (len(newPassword), newPassword, check_password_strength(newPassword), formatted_date), passwordname)
+        conn.commit()
+    save_info.delete(0, END)
+    save_info.insert(0, "Password Updated :)")
+    Reset()
 
 def delete_password():
     PasswordName = EntryBox_1.get()
