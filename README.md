@@ -62,12 +62,13 @@ Welcome to the **Password Generator GUI Application**, a Python-based tool desig
 ## 🛠️ How It Works
 
 1. **Generate Passwords**:
+   - Enter the name of the Password 
    - Enter the desired password length.
    - Click on "Generate Password" to create a strong, random password.
 
 2. **Save Passwords**:
-   - Provide a name for the password.
-   - Save the generated password along with its details to the database.
+   - Click on the save button
+   - Saves the generated password along with its details to the database.
 
 3. **Search for Passwords**:
    - Enter the password name and click "Search" to retrieve saved passwords.
