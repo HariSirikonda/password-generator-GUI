@@ -87,3 +87,10 @@ Welcome to the **Password Generator GUI Application**, a Python-based tool desig
 ## 📂 File Structure
 - **main.py**: Contains the application’s core logic and GUI implementation.
 - **passwords.db**: SQLite database to store passwords and metadata.
+
+## 🚀 Future Enhancements
+
+- Implement encryption for storing passwords in the database securely.
+- Add multi-user support for collaborative password management.
+- Improve GUI design with modern libraries like PyQt or Tkinter theming.
+- Include password import/export functionality for integration with other tools.
