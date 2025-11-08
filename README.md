@@ -3,6 +3,7 @@
 ## 🚀 Introduction
 Welcome to the **Password Generator GUI Application**, a Python-based tool designed to create, manage, and evaluate passwords efficiently. This project leverages the Tkinter library for the graphical user interface and SQLite for secure data storage. It is an ideal solution for individuals looking to manage their passwords securely and conveniently. 🔐✨
 
+![Sample Image](image1.png)
 
 ## 🌟 Features
 
