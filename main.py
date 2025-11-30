@@ -218,7 +218,6 @@ Button_2.grid(row=0, column=2, padx=10, pady=10)
 Button_3 = tkinter.Button(Buttonframe, text="Save Password", font=("Helvetica", 8), bg="white", fg="black", command=save_password)
 Button_3.grid(row=0, column=3, padx=10, pady=10)
 
-
 save_info = tkinter.Entry(app, font=("Helvetica", 18), bg="systembuttonface", bd=0)
 save_info.pack(pady=5)
 
