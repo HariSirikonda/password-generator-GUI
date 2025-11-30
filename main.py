@@ -206,14 +206,18 @@ DeleteButton.grid(row=0, column=3, padx=10, pady=10)
 Buttonframe = ttk.LabelFrame(app, text="Functions")
 Buttonframe.pack(pady=10)
 
-Button_1 = tkinter.Button(Buttonframe, text="Generate strong password", font=("Helvetica", 8), bg="white", fg="black", command=generate_password)
-Button_1.grid(row=0, column=0, padx=30, pady=10)
+Button_1 = tkinter.Button(Buttonframe, text="Generate password", font=("Helvetica", 8), bg="white", fg="black", command=generate_password)
+Button_1.grid(row=0, column=0, padx=10, pady=10)
+
+Button_3 = tkinter.Button(Buttonframe, text="Regenerate", font=("Helvetica", 8), bg="white", fg="black", command=generate_password)
+Button_3.grid(row=0, column=1, padx=10, pady=10)
 
 Button_2 = tkinter.Button(Buttonframe, text="Copy To Clipboard", font=("Helvetica", 8), bg="white", fg="black", command=clipper)
-Button_2.grid(row=0, column=1, padx=30, pady=10)
+Button_2.grid(row=0, column=2, padx=10, pady=10)
 
 Button_3 = tkinter.Button(Buttonframe, text="Save Password", font=("Helvetica", 8), bg="white", fg="black", command=save_password)
-Button_3.grid(row=0, column=2, padx=30, pady=10)
+Button_3.grid(row=0, column=3, padx=10, pady=10)
+
 
 save_info = tkinter.Entry(app, font=("Helvetica", 18), bg="systembuttonface", bd=0)
 save_info.pack(pady=5)
